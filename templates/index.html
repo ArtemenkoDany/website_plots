@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action="{{ url_for('index') }}" method="POST">
+            <input class="btn btn-primary" type="submit" value="Gruppierung" name="action1">
+
+            <input class="btn btn-primary" type="submit" value="PLC" name="action2">
+
+            <input class="btn btn-primary" type="submit" value="Gruppierung All" name="action3">
+
+            <input class="btn btn-primary" type="submit" value="Produktivitat" name="action4">
+
+            <input class="btn btn-primary" type="submit" value="Schicht" name="action5">
+
+            <input class="btn btn-primary" type="submit" value="Schicht 2-F" name="action6">
+
+            <input class="btn btn-primary" type="submit" value="Schicht 3-S" name="action7">
+
+            <input class="btn btn-primary" type="submit" value="Schicht 1-N" name="action8">
+    </form>
+
+{% endblock %}
+
+
+{% block checking %}
+    {% for res in results %}
+        <div class="result">
+
+            block {{ res['block'] }} : {{ res['result'] }}
+        </div>
+    {% endfor %}
+{% endblock %}
